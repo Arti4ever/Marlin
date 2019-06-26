@@ -255,25 +255,26 @@
 // SD Support
 //
 
-#if !ANY(LPC_SD_LCD, LPC_SD_ONBOARD, LPC_SD_CUSTOM_CABLE)
-  #undef USB_SD_DISABLED
-  #define USB_SD_ONBOARD
-  #define LPC_SD_LCD
+#ifndef SDCARD_CONNECTION
+  #define SDCARD_CONNECTION LCD
 #endif
 
 #define ONBOARD_SD_CS_PIN  P0_06   // Chip select for "System" SD card
 
-#if ENABLED(LPC_SD_LCD)
+#if SD_CONNECTION_IS(LCD)
   #define SCK_PIN          P0_15
   #define MISO_PIN         P0_17
   #define MOSI_PIN         P0_18
   #define SS_PIN           P0_16
-#elif ENABLED(LPC_SD_ONBOARD)
-  //#define SD_DETECT_PIN  P0_27   // (57) open-drain
+#elif SD_CONNECTION_IS(ONBOARD)
+  #undef SD_DETECT_PIN
+  #define SD_DETECT_PIN    P0_27
   #define SCK_PIN          P0_07
   #define MISO_PIN         P0_08
   #define MOSI_PIN         P0_09
   #define SS_PIN           ONBOARD_SD_CS_PIN
+#elif SD_CONNECTION_IS(CUSTOM_CABLE)
+  #error "No custom SD drive cable defined for this board."
 #endif
 
 /**
