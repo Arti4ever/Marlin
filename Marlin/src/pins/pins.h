@@ -510,7 +510,7 @@
 #elif MB(THE_BORG)
   #include "stm32/pins_THE_BORG.h"              // STM32F7                                env:STM32F7
 #elif MB(REMRAM_V1)
-  #include "stm32/pins_REMRAM_V1.h"             // STM32F7                                env:STM32F7xx
+  #include "stm32/pins_REMRAM_V1.h"             // STM32F7                                env:STM32F7
 
 //
 // Espressif ESP32
@@ -774,8 +774,8 @@
 #ifndef SD_DETECT_PIN
   #define SD_DETECT_PIN -1
 #endif
-#ifndef SDPOWER
-  #define SDPOWER -1
+#ifndef SDPOWER_PIN
+  #define SDPOWER_PIN -1
 #endif
 #ifndef SDSS
   #define SDSS -1
