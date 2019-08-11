@@ -1456,21 +1456,21 @@
   //#define TOOLCHANGE_NO_RETURN   // Never return to the previous position on tool-change
 
   // Retract and prime filament on tool-change
-  //#define TOOLCHANGE_FILAMENT_SWAP
+  #define TOOLCHANGE_FILAMENT_SWAP
   #if ENABLED(TOOLCHANGE_FILAMENT_SWAP)
-    #define TOOLCHANGE_FIL_SWAP_LENGTH          12  // (mm)
-    #define TOOLCHANGE_FIL_EXTRA_PRIME           2  // (mm)
-    #define TOOLCHANGE_FIL_SWAP_RETRACT_SPEED 3600  // (mm/m)
-    #define TOOLCHANGE_FIL_SWAP_PRIME_SPEED   3600  // (mm/m)
+    #define TOOLCHANGE_FIL_SWAP_LENGTH         130  // (mm)
+    #define TOOLCHANGE_FIL_EXTRA_PRIME          50  // (mm)
+    #define TOOLCHANGE_FIL_SWAP_RETRACT_SPEED 1500  // (mm/m)
+    #define TOOLCHANGE_FIL_SWAP_PRIME_SPEED   1500  // (mm/m)
   #endif
 
   /**
    * Position to park head during tool change.
    * Doesn't apply to SWITCHING_TOOLHEAD, DUAL_X_CARRIAGE, or PARKING_EXTRUDER
    */
-  //#define TOOLCHANGE_PARK
+  #define TOOLCHANGE_PARK
   #if ENABLED(TOOLCHANGE_PARK)
-    #define TOOLCHANGE_PARK_XY    { X_MIN_POS + 10, Y_MIN_POS + 10 }
+    #define TOOLCHANGE_PARK_XY    { X_MAX_POS , (Y_MAX_POS/2)  }
     #define TOOLCHANGE_PARK_XY_FEEDRATE 6000  // (mm/m)
   #endif
 #endif
@@ -1685,13 +1685,13 @@
   #endif
 
   #if AXIS_IS_TMC(E0)
-    #define E0_CURRENT    650
+    #define E0_CURRENT    490
     #define E0_MICROSTEPS  16
     #define E0_RSENSE    0.11
   #endif
 
   #if AXIS_IS_TMC(E1)
-    #define E1_CURRENT    800
+    #define E1_CURRENT    490
     #define E1_MICROSTEPS  16
     #define E1_RSENSE    0.11
   #endif
