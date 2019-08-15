@@ -1453,7 +1453,7 @@
 #if EXTRUDERS > 1
   // Z raise distance for tool-change, as needed for some extruders
   #define TOOLCHANGE_ZRAISE     2  // (mm)
-  //#define TOOLCHANGE_NO_RETURN   // Never return to the previous position on tool-change
+  #define TOOLCHANGE_NO_RETURN   // Never return to the previous position on tool-change
 
   // Retract and prime filament on tool-change
   #define TOOLCHANGE_FILAMENT_SWAP
@@ -1461,7 +1461,7 @@
     #define TOOLCHANGE_FIL_SWAP_LENGTH         130  // (mm)
     #define TOOLCHANGE_FIL_EXTRA_PRIME          50  // (mm)
     #define TOOLCHANGE_FIL_SWAP_RETRACT_SPEED 1500  // (mm/m)
-    #define TOOLCHANGE_FIL_SWAP_PRIME_SPEED   1500  // (mm/m)
+    #define TOOLCHANGE_FIL_SWAP_PRIME_SPEED   1000  // (mm/m)
   #endif
 
   /**
@@ -1685,13 +1685,13 @@
   #endif
 
   #if AXIS_IS_TMC(E0)
-    #define E0_CURRENT    490
+    #define E0_CURRENT    680
     #define E0_MICROSTEPS  16
     #define E0_RSENSE    0.11
   #endif
 
   #if AXIS_IS_TMC(E1)
-    #define E1_CURRENT    490
+    #define E1_CURRENT    680
     #define E1_MICROSTEPS  16
     #define E1_RSENSE    0.11
   #endif
