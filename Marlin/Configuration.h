@@ -1527,7 +1527,7 @@
   #define NOZZLE_CLEAN_TRIANGLES  3
 
   // Specify positions as { X, Y, Z }
-  #define NOZZLE_CLEAN_START_POINT { X_BED_SIZE, (Y_BED_SIZE / 2), (Z_MIN_POS + 1)}
+  #define NOZZLE_CLEAN_START_POINT { (X_BED_SIZE - 5), (Y_BED_SIZE / 2), (Z_MIN_POS + 1)}
   #define NOZZLE_CLEAN_END_POINT   { (X_BED_SIZE + 5), (Y_BED_SIZE / 2), (Z_MIN_POS + 1) }
 
   // Circular pattern radius
